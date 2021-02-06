@@ -25,4 +25,12 @@ public class Screening {
         return movie.getFee();
     }
 
+    public Reservation reserve(Customer customer, int audienceCount) {
+        return new Reservation(customer, this, calculateFee(audienceCount), audienceCount);
+    }
+
+    private Money calculateFee(int audienceCount) {
+        return movie.calculateFee(this).times(audienceCount);
+    }
+
 }
