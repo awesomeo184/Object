@@ -1,5 +1,6 @@
 package chapter5;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Screening {
@@ -16,4 +17,11 @@ public class Screening {
         return movie.calculateFee(this).times(audienceCount);
     }
 
+    public LocalDateTime getWhenScreened() {
+        return whenScreened;
+    }
+
+    public int getSequence() {
+        return sequence;
+    }
 }
